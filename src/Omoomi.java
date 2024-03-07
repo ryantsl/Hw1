@@ -1,14 +1,22 @@
 public class Omoomi extends Course {
-    public int [] classTime=new int[3];
+    public double [] classTime=new double[2];
+
+    public int classDay;
 
     public static int omooomiCounter=0;
 
     public Omoomi(int classId,int vahed,int capacity,int collegeId,String className,String teacherName,int examDate,
-                  int examStartingTime,int examFinishingTime,int classDay,int classStartingTime,int classFinishingTime){
+                  double examStartingTime,double examFinishingTime,int classDay,double classStartingTime,double classFinishingTime){
         super(classId,vahed,capacity,collegeId,className,teacherName,examDate,examStartingTime,examFinishingTime);
         omooomiCounter++;
-        this.classTime[0]=classDay;
-        this.classTime[1]=classStartingTime;
-        this.classTime[2]=classFinishingTime;
+        this.classDay=classDay;
+        this.classTime[0]=classStartingTime;
+        this.classTime[1]=classFinishingTime;
+    }
+    public  void showCourses(){
+        System.out.println("omoomi--code dars:"+this.classId+"--daneshkade;"+collegeName[this.collegeId]+"--name dars:"+this.className+"--name ostad:"+this.teacherName);
+        System.out.println("vahed:"+this.vahed+"--zarfiat:"+this.tedadeSabteNami+"/"+this.capacity+"--rooz class:"+Omoomi.rooz[this.classDay]+"--saat class:az"
+                +this.classTime[0]+"ta"+this.classTime[1]);
+        System.out.println("tarikhe emtehan:"+this.examDatee+"  az saat "+this.examDate[0]+"  ta saat "+this.examDate[1]+"\n\n");
     }
 }

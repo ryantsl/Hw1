@@ -24,7 +24,10 @@ public class Main {
     }
 
     public static void initClasses(){
-
+        omoomi[Omoomi.classCounter]=new Omoomi(1,2,30,0,"madar","ali moosavi",14030324,10,12,1,10.5,12);
+        omoomi[Omoomi.classCounter]=new Omoomi(2,2,30,1,"AP","majid hosseini",14030324,10.5,12.5,2,9,10.5);
+        omoomi[Omoomi.classCounter]=new Omoomi(3,2,30,2,"static","navid saatdat",14030325,10,12,1,11.5,13);
+        omoomi[Omoomi.classCounter]=new Omoomi(4,2,30,3,"riazi","reza akbari",14030326,10,12,2,10.5,12);
     }
 
     public static void run(){
@@ -69,7 +72,7 @@ public class Main {
             System.out.println("password ra vared konid va baraye bazgasht adade 0 ra vared konid");
             int password = scanner.nextInt();
             if(admin.passChecker(password)){
-                Cli_admin cli_admin=new Cli_admin(admin);
+                Cli_admin cli_admin=new Cli_admin(admin,omoomi,ekhtesasi,student);
             }else if(password==0) {
                 break;
             }else{
@@ -95,7 +98,7 @@ public class Main {
                 System.out.println(name);
                 System.out.println(student[Student.number_of_students-1].id);
                 System.out.println(student[Student.number_of_students-1].name);
-                CliStudent cliStudent=new CliStudent(student[Student.getArrayIndex(student_id)]);
+                CliStudent cliStudent=new CliStudent(student[Student.getArrayIndex(student_id)],omoomi,ekhtesasi);
 
             }else{
                 while (true){
@@ -105,7 +108,7 @@ public class Main {
                         break;
                     }else {
                         if(password==student[Student.getArrayIndex(student_id)].password){
-                            CliStudent cliStudent=new CliStudent(student[Student.getArrayIndex(student_id)]);
+                            CliStudent cliStudent=new CliStudent(student[Student.getArrayIndex(student_id)],omoomi,ekhtesasi);
                             break;
                         }else {
                             System.out.println("password eshtebah");
