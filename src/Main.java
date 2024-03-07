@@ -19,7 +19,12 @@ public class Main {
         System.out.println("hadeaksar tedad daneshjooyan ra vared konid");
         int amountOfStudents= scanner.nextInt();
         student= new Student[amountOfStudents];
+        initClasses();
         System.out.println("welcome");
+    }
+
+    public static void initClasses(){
+
     }
 
     public static void run(){
