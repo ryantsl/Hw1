@@ -1,33 +1,50 @@
 import java.util.Scanner;
 public class Main {
+    public static Student[] student;
+    public static Admin admin;
+
+    public static Omoomi omoomi[]=new Omoomi[30];
+    public static Ekhtesasi ekhtesasi[]=new Ekhtesasi[30];
+
     public static void main(String[] args) {
-        Student student[] = new Student[100];
+        init();
+        run();
+    }
+
+    public static void init(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("password admin ra vared konid");
         int first_password=scanner.nextInt();
-        Admin admin=new Admin(first_password);
+        admin=new Admin(first_password);
+        System.out.println("hadeaksar tedad daneshjooyan ra vared konid");
+        int amountOfStudents= scanner.nextInt();
+        student= new Student[amountOfStudents];
         System.out.println("welcome");
+    }
+
+    public static void run(){
+        Scanner scanner=new Scanner(System.in);
         boolean exit = true;
-        while (exit) {
+        while (exit){
             System.out.println("baraye log in shodan gozine morede nazar ra type konif");
             System.out.println("1.vorod be onvane admin \n2.vorod be onvane daneshjoo\n3.khoroj az barname");
             int a = scanner.nextInt();
-            exit=switcher(a,admin,student);
+            exit=switcher(a);
         }
+
     }
 
-
-    public static boolean switcher(int a,Admin admin,Student[] student) {
+    public static boolean switcher(int a) {
         boolean exit=true;
         switch (a) {
             case 1: {
                 System.out.println("1");
-                cliAdmin(admin);
+                cliAdmin();
                 break;
             }
             case 2: {
                 System.out.println("2");
-                cliStudent(student);
+                cliStudent();
                 break;
             }
             case 3: {
@@ -41,7 +58,7 @@ public class Main {
         return exit;
     }
 
-    public static void cliAdmin(Admin admin){
+    public static void cliAdmin(){
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("password ra vared konid va baraye bazgasht adade 0 ra vared konid");
@@ -56,7 +73,7 @@ public class Main {
         }
     }
 
-    public static void cliStudent(Student[] student) {
+    public static void cliStudent() {
 
         Scanner scanner=new Scanner(System.in);
         System.out.println("shomare daneshjooyi khod ra vared konid ya baraye bazgasht adade -1 ra vared konid");
@@ -83,7 +100,6 @@ public class Main {
                         break;
                     }else {
                         if(password==student[Student.getArrayIndex(student_id)].password){
-                            System.out.println("vorode mojadad");
                             CliStudent cliStudent=new CliStudent(student[Student.getArrayIndex(student_id)]);
                             break;
                         }else {

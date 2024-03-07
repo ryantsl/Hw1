@@ -55,13 +55,14 @@ public class Student {
         return true;
     }
 
-    public boolean checkPassword(int password){
-        if(this.password==password){
-            return true;
-        }else {
-            return false;
-        }
-    }
+//    public boolean checkPassword(int password){
+//        if(this.password==password){
+//            System.out.println("vorode mojadad");
+//            return true;
+//        }else {
+//            return false;
+//        }
+//    }
 
     public static int getArrayIndex(int id){
         for(int i=0;i<Student.number_of_students;i++){
