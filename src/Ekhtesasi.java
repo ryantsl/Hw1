@@ -8,11 +8,11 @@ public class Ekhtesasi extends Course{
     public Ekhtesasi(int classId,int vahed,int capacity,int collegeId,String className,String teacherName,int examDate,
                   double examStartingTime,double examFinishingTime,int classDay1,int classDay2,double classStartingTime,double classFinishingTime){
         super(classId,vahed,capacity,collegeId,className,teacherName,examDate,examStartingTime,examFinishingTime);
-        ekhtesasiCounter++;
         this.classDay1=classDay1;
         this.classDay2=classDay2;
         this.classTime[0]=classStartingTime;
         this.classTime[1]=classFinishingTime;
+        ekhtesasiCounter++;
     }
     public  void showCourses(){
         System.out.println("ekhtesasi--code dars:"+this.classId+"--daneshkade;"+collegeName[this.collegeId]+"--name dars:"+this.className+"--name ostad:"+this.teacherName);

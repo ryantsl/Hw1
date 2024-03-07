@@ -43,14 +43,14 @@ public class CliStudent {
         }
     }
     public void showCourses(int collegeId){
-        for (int i=0;i<30;i++){
+        for (int i=0;i<Omoomi.omooomiCounter;i++){
             if(omoomi[i].classId!=0){
                 if(omoomi[i].collegeId==collegeId){
                     omoomi[i].showCourses();
                 }
             }
         }
-        for (int i=0;i<30;i++){
+        for (int i=0;i<Ekhtesasi.ekhtesasiCounter;i++){
             if(ekhtesasi[i].classId!=0){
                 if(ekhtesasi[i].collegeId==collegeId){
                     ekhtesasi[i].showCourses();

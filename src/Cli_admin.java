@@ -60,14 +60,17 @@ public class Cli_admin {
     }
 
     public void showCourses(int collegeId){
-        for (int i=0;i<30;i++){
+        System.out.println(Omoomi.omooomiCounter+"  "+Ekhtesasi.ekhtesasiCounter);
+        for (int i=0;i<Omoomi.omooomiCounter;i++){
+            System.out.println(i);
             if(omoomi[i].classId!=0){
                 if(omoomi[i].collegeId==collegeId){
                     omoomi[i].showCourses();
                 }
             }
         }
-        for (int i=0;i<30;i++){
+        for (int i=0;i<Ekhtesasi.ekhtesasiCounter;i++){
+            System.out.println(i);
             if(ekhtesasi[i].classId!=0){
                 if(ekhtesasi[i].collegeId==collegeId){
                     ekhtesasi[i].showCourses();

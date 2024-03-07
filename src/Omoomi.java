@@ -8,10 +8,10 @@ public class Omoomi extends Course {
     public Omoomi(int classId,int vahed,int capacity,int collegeId,String className,String teacherName,int examDate,
                   double examStartingTime,double examFinishingTime,int classDay,double classStartingTime,double classFinishingTime){
         super(classId,vahed,capacity,collegeId,className,teacherName,examDate,examStartingTime,examFinishingTime);
-        omooomiCounter++;
         this.classDay=classDay;
         this.classTime[0]=classStartingTime;
         this.classTime[1]=classFinishingTime;
+        omooomiCounter++;
     }
     public  void showCourses(){
         System.out.println("omoomi--code dars:"+this.classId+"--daneshkade;"+collegeName[this.collegeId]+"--name dars:"+this.className+"--name ostad:"+this.teacherName);
