@@ -67,15 +67,30 @@ public class Main {
                 System.out.println("name khod ra vared konid");
                 String garbage= scanner.nextLine();
                 String name=scanner.nextLine();
-                student[Student.number_of_students]=new Student(student_id,name);
+                System.out.println("password khod ra vared konid");
+                int password= scanner.nextInt();
+                student[Student.number_of_students]=new Student(student_id,name,password);
                 System.out.println(name);
                 System.out.println(student[Student.number_of_students-1].id);
                 System.out.println(student[Student.number_of_students-1].name);
                 CliStudent cliStudent=new CliStudent(student[Student.getArrayIndex(student_id)]);
 
             }else{
-                System.out.println("vorode mojadad");
-                CliStudent cliStudent=new CliStudent(student[Student.getArrayIndex(student_id)]);
+                while (true){
+                    System.out.println("password khod ra vared konid ya baraye bazgasht adade -1 ra vared konid");
+                    int password=scanner.nextInt();
+                    if(password==-1){
+                        break;
+                    }else {
+                        if(password==student[Student.getArrayIndex(student_id)].password){
+                            System.out.println("vorode mojadad");
+                            CliStudent cliStudent=new CliStudent(student[Student.getArrayIndex(student_id)]);
+                            break;
+                        }else {
+                            System.out.println("password eshtebah");
+                        }
+                    }
+                }
             }
         }
     }

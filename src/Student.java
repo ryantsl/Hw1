@@ -4,6 +4,8 @@ public class Student {
     static int [] ids=new int[100];
     public int id;
     public String name;
+
+    public int password;
     public int vahed_omomi = 0;
     public int vahed_takhasosi = 0;
     public int[][] courses_id=new int[10][10];
@@ -21,10 +23,15 @@ public class Student {
     public void setName(String name){
         this.name=name;
     }
-    public Student(int id,String name){
+
+    public void setPassword(int password){
+        this.password=password;
+    }
+    public Student(int id,String name,int password){
         setId(id);
         setName(name);
         setNumber_of_students();
+        setPassword(password);
         System.out.println("profile shoma sakhte shod");
     }
     public void adding_omoomi_course(Course course){
@@ -46,6 +53,14 @@ public class Student {
             }
         }
         return true;
+    }
+
+    public boolean checkPassword(int password){
+        if(this.password==password){
+            return true;
+        }else {
+            return false;
+        }
     }
 
     public static int getArrayIndex(int id){
