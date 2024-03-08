@@ -49,12 +49,10 @@ public class Main {
         boolean exit=true;
         switch (a) {
             case 1: {
-                System.out.println("1");
                 cliAdmin();
                 break;
             }
             case 2: {
-                System.out.println("2");
                 cliStudent();
                 break;
             }
@@ -102,10 +100,10 @@ public class Main {
                     System.out.println("password khod ra vared konid");
                     int password= scanner.nextInt();
                     student[Student.number_of_students]=new Student(student_id,name,password);
-                    System.out.println(name);
-                    System.out.println(student[Student.number_of_students-1].id);
-                    System.out.println(student[Student.number_of_students-1].name);
-                    System.out.println("account jadid sakhte shod");
+//                    System.out.println(name);
+//                    System.out.println(student[Student.number_of_students-1].id);
+//                    System.out.println(student[Student.number_of_students-1].name);
+//                    System.out.println("account jadid sakhte shod");
                     CliStudent cliStudent=new CliStudent(student[Student.getArrayIndex(student_id)],omoomi,ekhtesasi);
                 }
 

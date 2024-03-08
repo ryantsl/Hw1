@@ -19,7 +19,7 @@ public class Cli_admin {
     public void menu(){
         boolean exit=true;
         while (exit){
-            System.out.println("Admin menu\n0.back\n1.moshahede doros\n2.ezafe kardane zarfiat\n3.ezafe kardane daneshjoo be dars\n4.hazf kardane daneshjoo az darsi\n5.tarif dars jadid");
+            System.out.println("Admin menu\n0.back\n1.moshahede doros\n2.ezafe kardane zarfiat\n3.ezafe kardane daneshjoo be dars\n4.hazf kardane daneshjoo az darsi\n5.tarif dars jadid\n 6.hazf dars");
             Scanner scanner=new Scanner(System.in);
             int command=scanner.nextInt();
             switch (command){
@@ -38,6 +38,8 @@ public class Cli_admin {
 
                 } case 5:{
                     newClass();
+                    break;
+                } case 6:{
                     break;
                 } default:{
                     System.out.println("dastoore tarif nashode,lotfan dobare vared konid");
@@ -112,6 +114,7 @@ public class Cli_admin {
                     break;
                 } case 2:{
                     System.out.println("darsi ba code morede nazar vojod nadare,lotfan dobare vared konid");
+                    addingCapacity();
                     break;
                 }
             }

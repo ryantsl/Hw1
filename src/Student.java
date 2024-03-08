@@ -1,14 +1,20 @@
 public class Student {
-    static int number_of_students=0;
+    public static int number_of_students=0;
 
-    static int [] ids=new int[100];
+    public static int [] ids=new int[100];
     public int id;
     public String name;
 
     public int password;
-    public int vahed_omomi = 0;
-    public int vahed_takhasosi = 0;
-    public int[][] courses_id=new int[10][10];
+    public int vahedOmomi = 0;
+    public int vahedTakhasosi = 0;
+
+    public int tedadOmoomi=0;
+    public int tedadEkhtesasi=0;
+
+    public int[] omoomiIds=new int[10];
+    public int[] ekhtesasiIds=new int[20];
+    public int[] courses_id=new int[20];
     public Student(){
 
     }
@@ -34,13 +40,27 @@ public class Student {
         setPassword(password);
         System.out.println("profile shoma sakhte shod");
     }
-    public void adding_omoomi_course(Course course){
+    public void addingOmoomiCourse(Omoomi omoomi){
+        this.vahedOmomi+=omoomi.vahed;
+        this.omoomiIds[this.tedadOmoomi]=omoomi.classId;
+        this.tedadOmoomi++;
+        omoomi.studentIds[omoomi.tedadeSabteNami]=this.id;
+        omoomi.tedadeSabteNami++;
+        System.out.println("dars ba movafaqiat akhz shod");
+    }
+    public void addingEkhtesasiCourse(Ekhtesasi ekhtesasi){
+        this.vahedTakhasosi+=ekhtesasi.vahed;
+        this.ekhtesasiIds[this.tedadEkhtesasi]=ekhtesasi.classId;
+        this.tedadEkhtesasi++;
+        ekhtesasi.studentIds[ekhtesasi.tedadeSabteNami]=this.id;
+        ekhtesasi.tedadeSabteNami++;
+        System.out.println("dars ba movafaqiat akhz shod");
+    }
+    public void deleteingOmoomiCourse(Omoomi omoomi){
 
     }
-    public void adding_ekhtesasi_course(Course course){
 
-    }
-    public void deleteing_course(Course course){
+    public void deleteigEkhtesasiCourse(Ekhtesasi ekhtesasi){
 
     }
     public static boolean idCheckerIsNew(int inputId){
