@@ -40,9 +40,42 @@ public class Cli_admin {
                     newClass();
                     break;
                 } case 6:{
+                    hazfDars();
                     break;
                 } default:{
                     System.out.println("dastoore tarif nashode,lotfan dobare vared konid");
+                }
+            }
+        }
+    }
+    public void hazfOmoomi(int classId){
+        for (int i=0;i<omoomi[getOmoomiArrayIndex(classId)].tedadeSabteNami;i++){
+            student[Student.getArrayIndex(omoomi[getOmoomiArrayIndex(classId)].studentIds[0])].deleteingOmoomiCourse(omoomi[getOmoomiArrayIndex(classId)],classId);
+        }
+        omoomi[getOmoomiArrayIndex(classId)].classId=0;
+    }
+    public void hazfEkhtesasi(int classId){
+        for (int i=0;i<ekhtesasi[getEkhtesasiArrayIndex(classId)].tedadeSabteNami;i++){
+            student[Student.getArrayIndex(ekhtesasi[getEkhtesasiArrayIndex(classId)].studentIds[0])].deleteigEkhtesasiCourse(ekhtesasi[getEkhtesasiArrayIndex(classId)],classId);
+        }
+        ekhtesasi[getEkhtesasiArrayIndex(classId)].classId=0;
+    }
+    public void hazfDars(){
+        System.out.println("code darse morede nazar ra vared konid va baraye bargasht be menu ghabl -1 ra vared konid");
+        Scanner scanner=new Scanner(System.in);
+        int classId= scanner.nextInt();
+        if(classId!=-1){
+            switch (omoomiOrEkhtesasi(classId)){
+                case 0:{
+                    hazfOmoomi(classId);
+                    break;
+                } case 1:{
+                    hazfEkhtesasi(classId);
+                    break;
+                } case 2:{
+                    System.out.println("darsi ba code morede nazar vojod nadare,lotfan dobare vared konid");
+                    hazfDars();
+                    break;
                 }
             }
         }

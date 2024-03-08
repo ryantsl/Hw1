@@ -78,6 +78,7 @@ public class Student {
                 temp=true;
             }
         }
+        omoomi.tedadeSabteNami--;
     }
 
     public void deleteigEkhtesasiCourse(Ekhtesasi ekhtesasi,int classId2){
