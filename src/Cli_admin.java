@@ -75,7 +75,7 @@ public class Cli_admin {
             }
         }
         for (int i=0;i<Ekhtesasi.ekhtesasiCounter;i++){
-            if(classId==omoomi[i].classId){
+            if(classId==ekhtesasi[i].classId){
                 System.out.println("code vared shode tekrari mibashad");
                 return false;
             }
@@ -85,7 +85,6 @@ public class Cli_admin {
 
     public void newOmoomi(){
         Scanner scanner=new Scanner(System.in);
-        omoomi[Omoomi.omooomiCounter]=new Omoomi(1,2,30,0,"madar","ali moosavi",14030324,10,12,1,10.5,12);
         boolean exit=true;
         while (exit){
             System.out.println("code dars ra vared konid va baraye cancel kardan adade 0 ra vared konid");
@@ -171,7 +170,61 @@ public class Cli_admin {
     }
 
     public void newEkhtesasi(){
+        ekhtesasi[Ekhtesasi.ekhtesasiCounter]=new Ekhtesasi(5,3,30,0,"mokhaberat","reza akbari",14030326,10,12,2,4,7.5,9);
+        Scanner scanner=new Scanner(System.in);
+        boolean exit=true;
+        while (exit){
+            System.out.println("code dars ra vared konid va baraye cancel kardan adade 0 ra vared konid");
+            int classId=scanner.nextInt();
+            int vahed;
+            int capacity;
+            int collegeId;
+            String className;
+            String teacherName;
+            int examDate;
+            double examStartingTime;
+            double examFinishingTime;
+            int classDay1;
+            int classDay2;
+            double classStartingTime;
+            double classFinishingTime;
 
+            if(classId==0){
+                break;
+            }else if(checkNewId(classId)==false) {
+                newEkhtesasi();
+                break;
+            }else{
+                System.out.println("tedad vahed dars ra vared konid");
+                vahed= scanner.nextInt();
+                System.out.println("zarfiat dars ra vared konid");
+                capacity= scanner.nextInt();
+                collegeId=collegeSelector2();
+                String garbage= scanner.nextLine();
+                System.out.println("name dars ra vared konid");
+                className= scanner.nextLine();
+                System.out.println("name ostad ra vared konid");
+                teacherName= scanner.nextLine();
+                System.out.println("tarikhe emtehan ra posht sare ham vared konid\nmesal:1403/03/22-->14030322");
+                examDate= scanner.nextInt();
+                System.out.println("saat shoroe emtehan ra vared konid");
+                examStartingTime= scanner.nextDouble();
+                System.out.println("saat payan emtehan ra vared konid");
+                examFinishingTime= scanner.nextDouble();
+                System.out.println("rooz class aval ra vared konid");
+                classDay1=daySelector();
+                System.out.println("rooz class dovom ra vared konid");
+                classDay2=daySelector();
+                System.out.println("saat shoroe class ra vared konid");
+                classStartingTime= scanner.nextDouble();
+                System.out.println("saat payane class ra vared konid");
+                classFinishingTime= scanner.nextDouble();
+                ekhtesasi[Ekhtesasi.ekhtesasiCounter]=new Ekhtesasi(classId,vahed,capacity,collegeId,className,teacherName,examDate,examStartingTime,examFinishingTime,classDay1,classDay2,classStartingTime,classFinishingTime);
+                System.out.println("class ba movafaqiat sakhte shod");
+                menu();
+            }
+
+        }
     }
 
     public void collegeSelector(){
