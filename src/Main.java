@@ -6,6 +6,8 @@ public class Main {
     public static Omoomi omoomi[]=new Omoomi[30];
     public static Ekhtesasi ekhtesasi[]=new Ekhtesasi[30];
 
+    public static int amountOfStudents;
+
     public static void main(String[] args) {
         init();
         run();
@@ -17,7 +19,7 @@ public class Main {
         int first_password=scanner.nextInt();
         admin=new Admin(first_password);
         System.out.println("hadeaksar tedad daneshjooyan ra vared konid");
-        int amountOfStudents= scanner.nextInt();
+        amountOfStudents= scanner.nextInt();
         student= new Student[amountOfStudents];
         initClasses();
         System.out.println("welcome");
@@ -90,16 +92,22 @@ public class Main {
 
         if(student_id!=-1) {
             if(Student.idCheckerIsNew(student_id)){
-                System.out.println("name khod ra vared konid");
-                String garbage= scanner.nextLine();
-                String name=scanner.nextLine();
-                System.out.println("password khod ra vared konid");
-                int password= scanner.nextInt();
-                student[Student.number_of_students]=new Student(student_id,name,password);
-                System.out.println(name);
-                System.out.println(student[Student.number_of_students-1].id);
-                System.out.println(student[Student.number_of_students-1].name);
-                CliStudent cliStudent=new CliStudent(student[Student.getArrayIndex(student_id)],omoomi,ekhtesasi);
+                if(Student.number_of_students==amountOfStudents){
+                    System.out.println("emkan sabte nam daneshjoo jadid vojod nadarad");
+                }
+                else {
+                    System.out.println("name khod ra vared konid");
+                    String garbage= scanner.nextLine();
+                    String name=scanner.nextLine();
+                    System.out.println("password khod ra vared konid");
+                    int password= scanner.nextInt();
+                    student[Student.number_of_students]=new Student(student_id,name,password);
+                    System.out.println(name);
+                    System.out.println(student[Student.number_of_students-1].id);
+                    System.out.println(student[Student.number_of_students-1].name);
+                    System.out.println("account jadid sakhte shod");
+                    CliStudent cliStudent=new CliStudent(student[Student.getArrayIndex(student_id)],omoomi,ekhtesasi);
+                }
 
             }else{
                 while (true){

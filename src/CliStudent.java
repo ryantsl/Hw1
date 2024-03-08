@@ -8,7 +8,7 @@ public class CliStudent {
     public void menu(){
         boolean exit=true;
         while (exit){
-            System.out.println("Student menu\n0.back\n1.namayeshe dars haye sabte nam shode\n2.namayeshe dorose daneshkade ha");
+            System.out.println("Student menu\n0.back\n1.namayeshe dars haye sabte nam shode\n2.namayeshe dorose daneshkade ha\n3.akhz dars\n4.hazf dars");
             Scanner scanner=new Scanner(System.in);
             int command=scanner.nextInt();
             switch(command){
@@ -16,16 +16,25 @@ public class CliStudent {
                     exit=false;
                     break;
                 } case 1:{
-                    collegeSelector();
+                    showMyCourses();
                     break;
                 } case 2:{
-
+                    collegeSelector();
+                    break;
+                } case 3:{
+                    break;
+                } case 4:{
+                    break;
                 } default:{
                     System.out.println("dastoore tarif nashode,lotfan dobare vared konid");
                     menu();
                 }
             }
         }
+    }
+
+    public void showMyCourses(){
+
     }
     public void collegeSelector(){
         boolean exit=true;
@@ -34,6 +43,7 @@ public class CliStudent {
             Scanner scanner=new Scanner(System.in);
             int command=scanner.nextInt();
             if(command==0){
+                exit=false;
                 break;
             }else if(command>6){
                 System.out.println("dastoore tarif nashode,lotfan dobare vared konid");
