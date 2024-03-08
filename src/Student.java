@@ -56,12 +56,53 @@ public class Student {
         ekhtesasi.tedadeSabteNami++;
         System.out.println("dars ba movafaqiat akhz shod");
     }
-    public void deleteingOmoomiCourse(Omoomi omoomi){
-
+    public void deleteingOmoomiCourse(Omoomi omoomi,int classId1){
+        boolean temp=false;
+        for (int i=0;i<tedadOmoomi;i++){
+            if(temp){
+                this.omoomiIds[i-1]=this.omoomiIds[i];
+            }
+            if(classId1==this.omoomiIds[i]){
+                this.omoomiIds[i]=0;
+                temp=true;
+            }
+        }
+        temp=false;
+        tedadOmoomi--;
+        for (int i=0;i<omoomi.tedadeSabteNami;i++){
+            if(temp){
+                omoomi.studentIds[i-1]=omoomi.studentIds[i];
+            }
+            if(this.id==omoomi.studentIds[i]){
+                omoomi.studentIds[i]=0;
+                temp=true;
+            }
+        }
     }
 
-    public void deleteigEkhtesasiCourse(Ekhtesasi ekhtesasi){
-
+    public void deleteigEkhtesasiCourse(Ekhtesasi ekhtesasi,int classId2){
+        boolean temp=false;
+        for (int i=0;i<tedadEkhtesasi;i++){
+            if(temp){
+                this.ekhtesasiIds[i-1]=this.ekhtesasiIds[i];
+            }
+            if(classId2==this.ekhtesasiIds[i]){
+                this.ekhtesasiIds[i]=0;
+                temp=true;
+            }
+        }
+        temp=false;
+        tedadEkhtesasi--;
+        for (int i=0;i<ekhtesasi.tedadeSabteNami;i++){
+            if(temp){
+                ekhtesasi.studentIds[i-1]=ekhtesasi.studentIds[i];
+            }
+            if(this.id==ekhtesasi.studentIds[i]){
+                ekhtesasi.studentIds[i]=0;
+                temp=true;
+            }
+        }
+        ekhtesasi.tedadeSabteNami--;
     }
     public static boolean idCheckerIsNew(int inputId){
         if(Student.number_of_students==0){

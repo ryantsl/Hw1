@@ -25,10 +25,59 @@ public class CliStudent {
                     registeringCourse();
                     break;
                 } case 4:{
+                    deleteingCourse();
                     break;
                 } default:{
                     System.out.println("dastoore tarif nashode,lotfan dobare vared konid");
                     menu();
+                }
+            }
+        }
+    }
+    public void checkHavingOmoomi(int courseId){
+        boolean temp=true;
+        for (int i=0;i<student.tedadOmoomi;i++){
+            if(courseId== student.omoomiIds[i]){
+                temp=false;
+                student.deleteingOmoomiCourse(omoomi[getOmoomiArrayIndex(courseId)],courseId);
+            }
+        }
+        if(temp){
+            System.out.println("shoma in dars na nadarid,lotfan dobare code ra vared konid");
+            deleteingCourse();
+        }
+
+    }
+    public void checkHavingEkhtesasi(int courseId){
+        boolean temp=true;
+        for (int i=0;i<student.tedadEkhtesasi;i++){
+            if(courseId== student.ekhtesasiIds[i]){
+                temp=false;
+                student.deleteigEkhtesasiCourse(ekhtesasi[getEkhtesasiArrayIndex(courseId)],courseId);
+            }
+        }
+        if(temp){
+            System.out.println("shoma in dars na nadarid,lotfan dobare code ra vared konid");
+            deleteingCourse();
+        }
+
+    }
+    public void deleteingCourse(){
+        System.out.println("code dars morede nazar ra vared konid va baraye bargashtan be menu ghabli adade -1 ra vared konid");
+        Scanner scanner=new Scanner(System.in);
+        int courseId= scanner.nextInt();
+        if(courseId!=-1){
+            switch (omoomiOrEkhtesasi(courseId)){
+                case 0:{
+                    checkHavingOmoomi(courseId);
+                    break;
+                } case 1:{
+                    checkHavingEkhtesasi(courseId);
+                    break;
+                } case 2:{
+                    System.out.println("darsi ba code morede nazar vojod nadare,lotfan dobare vared konid");
+                    deleteingCourse();
+                    break;
                 }
             }
         }
