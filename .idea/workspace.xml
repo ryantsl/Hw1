@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fba4d917-cc03-40ca-a9c7-05a0d2e0ed6c" name="Changes" comment="ezafe shodan option ezafe kardane dars omoomi">
+    <list default="true" id="fba4d917-cc03-40ca-a9c7-05a0d2e0ed6c" name="Changes" comment="ezafe shodan option ezafe kardane dars ekhtesasi">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cli_admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cli_admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Course.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +68,7 @@
       <workItem from="1709357471685" duration="5172000" />
       <workItem from="1709474261985" duration="14789000" />
       <workItem from="1709490958206" duration="1226000" />
-      <workItem from="1709789444649" duration="34395000" />
+      <workItem from="1709789444649" duration="38326000" />
     </task>
     <task id="LOCAL-00001" summary="sout">
       <option name="closed" value="true" />
@@ -133,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709879760884</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="ezafe shodan option ezafe kardane dars ekhtesasi">
+      <option name="closed" value="true" />
+      <created>1709880913637</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1709880913637</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +168,7 @@
     <MESSAGE value="emkane moshahede dorose daneshkade ha" />
     <MESSAGE value="degug option moshahede dars ha" />
     <MESSAGE value="ezafe shodan option ezafe kardane dars omoomi" />
-    <option name="LAST_COMMIT_MESSAGE" value="ezafe shodan option ezafe kardane dars omoomi" />
+    <MESSAGE value="ezafe shodan option ezafe kardane dars ekhtesasi" />
+    <option name="LAST_COMMIT_MESSAGE" value="ezafe shodan option ezafe kardane dars ekhtesasi" />
   </component>
 </project>

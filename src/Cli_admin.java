@@ -30,7 +30,8 @@ public class Cli_admin {
                     collegeSelector();
                     break;
                 } case 2:{
-
+                    addingCapacity();
+                    break;
                 } case 3:{
 
                 } case 4:{
@@ -40,6 +41,78 @@ public class Cli_admin {
                     break;
                 } default:{
                     System.out.println("dastoore tarif nashode,lotfan dobare vared konid");
+                }
+            }
+        }
+    }
+    public int omoomiOrEkhtesasi(int classId){
+        for(int i=0;i<Omoomi.omooomiCounter;i++){
+            if(classId==omoomi[i].classId){
+                return 0;
+            }
+        }
+        for (int i=0;i<Ekhtesasi.ekhtesasiCounter;i++){
+            if (classId==ekhtesasi[i].classId){
+                return 1;
+            }
+        }
+        return 2;
+    }
+    public int getOmoomiArrayIndex(int classId){
+        for(int i=0;i<Omoomi.omooomiCounter;i++){
+            if(classId==omoomi[i].classId){
+                return i;
+            }
+        }
+        return -1;
+    }
+    public int getEkhtesasiArrayIndex(int classId){
+        for(int i=0;i<Ekhtesasi.ekhtesasiCounter;i++){
+            if(classId==ekhtesasi[i].classId){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public void addingCapacity(){
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("code darsi ra vared konid va baraye bargasht be menu ghabl -1 ra vared konid");
+        int classId=scanner.nextInt();
+        int newCapacity;
+        if(classId!=-1){
+            switch (omoomiOrEkhtesasi(classId)){
+                case 0:{
+                    while (true){
+                        System.out.println("zarfiat feli:"+omoomi[getOmoomiArrayIndex(classId)].capacity+"\nzarfiat jadid ra vared konid");
+                        newCapacity= scanner.nextInt();
+                        if(newCapacity>omoomi[getOmoomiArrayIndex(classId)].capacity){
+                            omoomi[getOmoomiArrayIndex(classId)].addingCapacity(newCapacity);
+                            System.out.println("zariat ba movafaqiat ezafe shod");
+                            break;
+                        }
+                        else {
+                            System.out.println("zarfiat kamtar az zarfiate ghabli,lotfan dobare vared konid");
+                        }
+                    }
+                    break;
+                } case 1:{
+                    while (true){
+                        System.out.println("zarfiat feli:"+ekhtesasi[getEkhtesasiArrayIndex(classId)].capacity+"\nzarfiat jadid ra vared konid");
+                        newCapacity= scanner.nextInt();
+                        if(newCapacity>ekhtesasi[getEkhtesasiArrayIndex(classId)].capacity){
+                            ekhtesasi[getEkhtesasiArrayIndex(classId)].addingCapacity(newCapacity);
+                            System.out.println("zariat ba movafaqiat ezafe shod");
+                            break;
+                        }
+                        else {
+                            System.out.println("zarfiat kamtar az zarfiate ghabli,lotfan dobare vared konid");
+                        }
+                    }
+                    break;
+                } case 2:{
+                    System.out.println("darsi ba code morede nazar vojod nadare,lotfan dobare vared konid");
+                    break;
                 }
             }
         }
@@ -245,9 +318,9 @@ public class Cli_admin {
     }
 
     public void showCourses(int collegeId){
-        System.out.println(Omoomi.omooomiCounter+"  "+Ekhtesasi.ekhtesasiCounter);
+//        System.out.println(Omoomi.omooomiCounter+"  "+Ekhtesasi.ekhtesasiCounter);
         for (int i=0;i<Omoomi.omooomiCounter;i++){
-            System.out.println(i);
+//            System.out.println(i);
             if(omoomi[i].classId!=0){
                 if(omoomi[i].collegeId==collegeId){
                     omoomi[i].showCourses();
@@ -255,7 +328,7 @@ public class Cli_admin {
             }
         }
         for (int i=0;i<Ekhtesasi.ekhtesasiCounter;i++){
-            System.out.println(i);
+//            System.out.println(i);
             if(ekhtesasi[i].classId!=0){
                 if(ekhtesasi[i].collegeId==collegeId){
                     ekhtesasi[i].showCourses();

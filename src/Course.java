@@ -81,9 +81,13 @@ public class Course {
         }
     }
 
-    public void addingCapacity(int newCapacity){
+    public  boolean addingCapacity(int newCapacity){
         if(newCapacity>this.capacity){
             this.capacity=newCapacity;
+            return true;
+        }else {
+            System.out.println("zarfiat kamtar az zarfiat ghabli");
+            return false;
         }
     }
 
