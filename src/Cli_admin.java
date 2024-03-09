@@ -19,7 +19,7 @@ public class Cli_admin {
     public void menu(){
         boolean exit=true;
         while (exit){
-            System.out.println("Admin menu\n0.back\n1.moshahede doros\n2.ezafe kardane zarfiat\n3.ezafe kardane daneshjoo be dars\n4.hazf kardane daneshjoo az darsi\n5.tarif dars jadid\n6.hazf dars\n7.moshahede list daneshjooyane dars");
+            System.out.println("Admin menu\n0.back\n1.moshahede doros\n2.ezafe kardane zarfiat\n3.vorod be profile daneshjooyan\n4.tarif dars jadid\n5.hazf dars\n6.moshahede list daneshjooyane dars");
             Scanner scanner=new Scanner(System.in);
             int command=scanner.nextInt();
             switch (command){
@@ -33,21 +33,34 @@ public class Cli_admin {
                     addingCapacity();
                     break;
                 } case 3:{
-
+                    loginToStudentProfile();
+                    break;
                 } case 4:{
-
-                } case 5:{
                     newClass();
                     break;
-                } case 6:{
+                } case 5:{
                     hazfDars();
                     break;
-                } case 7:{
+                } case 6:{
                     listOfStudent();
                     break;
                 } default:{
                     System.out.println("dastoore tarif nashode,lotfan dobare vared konid");
                 }
+            }
+        }
+    }
+    public void loginToStudentProfile(){
+        System.out.println("shomare daneshjooyi morede nazar ra vared konid va baraye bazgasht be menu ghabl adade -1 ra vared konid");
+        Scanner scanner=new Scanner(System.in);
+        int studentId=scanner.nextInt();
+        if(studentId!=-1){
+            if(Student.idCheckerIsNew(studentId)){
+                System.out.println("daneshjooyi ba in code vojod nadarad,lotfan dobare vared konid");
+                loginToStudentProfile();
+            }else {
+                System.out.println("vorod be profile "+student[Student.getArrayIndex(studentId)].name);
+                CliStudent cliStudent=new CliStudent(student[Student.getArrayIndex(studentId)],omoomi,ekhtesasi);
             }
         }
     }
