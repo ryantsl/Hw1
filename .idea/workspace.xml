@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fba4d917-cc03-40ca-a9c7-05a0d2e0ed6c" name="Changes" comment="ezafe shodane option moshahede dorose sabte nami baraye daneshjoo va option moshahede list afrad sabte namie dars">
+    <list default="true" id="fba4d917-cc03-40ca-a9c7-05a0d2e0ed6c" name="Changes" comment="ezafe shodan option vorode admin be profile daneshjoo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cli_admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cli_admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CliStudent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CliStudent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +68,7 @@
       <workItem from="1709357471685" duration="5172000" />
       <workItem from="1709474261985" duration="14789000" />
       <workItem from="1709490958206" duration="1226000" />
-      <workItem from="1709789444649" duration="62593000" />
+      <workItem from="1709789444649" duration="64782000" />
     </task>
     <task id="LOCAL-00001" summary="sout">
       <option name="closed" value="true" />
@@ -181,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709967068867</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="ezafe shodan option vorode admin be profile daneshjoo">
+      <option name="closed" value="true" />
+      <created>1709971715128</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1709971715128</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +222,7 @@
     <MESSAGE value="ezafe shodan option hazfe dars baraye daneshjoo" />
     <MESSAGE value="ezafe shodane option hazf kolie dars tavasote admin" />
     <MESSAGE value="ezafe shodane option moshahede dorose sabte nami baraye daneshjoo va option moshahede list afrad sabte namie dars" />
-    <option name="LAST_COMMIT_MESSAGE" value="ezafe shodane option moshahede dorose sabte nami baraye daneshjoo va option moshahede list afrad sabte namie dars" />
+    <MESSAGE value="ezafe shodan option vorode admin be profile daneshjoo" />
+    <option name="LAST_COMMIT_MESSAGE" value="ezafe shodan option vorode admin be profile daneshjoo" />
   </component>
 </project>

@@ -157,8 +157,25 @@ public class CliStudent {
         }
         return true;
     }
+    public boolean checkOmoomiCapacity(Omoomi omoomi1){
+        if(omoomi1.capacity==omoomi1.tedadeSabteNami){
+            System.out.println("zarfiate dars takmil ast");
+            return false;
+        }
+        return true;
+    }
+    public boolean checkEkhtesasiCapacity(Ekhtesasi ekhtesasi1){
+        if (ekhtesasi1.capacity==ekhtesasi1.tedadeSabteNami){
+            System.out.println("zarfiate dars takmil ast");
+            return false;
+        }
+        return true;
+    }
 
     public boolean checkOmooomi(Omoomi omoomi1){
+        if(!checkOmoomiCapacity(omoomi1)){
+            return false;
+        }
         if(omoomi1.vahed+ student.vahedOmomi>5){
             System.out.println("emkan akhz bishtar az 5 vahed omoomi vojod nadarad");
             return false;
@@ -236,6 +253,9 @@ public class CliStudent {
 
 
     public boolean checkEkhtesasi(Ekhtesasi ekhtesasi1){
+        if(!checkEkhtesasiCapacity(ekhtesasi1)){
+            return false;
+        }
         if(ekhtesasi1.vahed+ student.vahedOmomi+student.vahedTakhasosi>20){
             System.out.println("emkan akhz bishtar az 20 vahed vojod nadarad");
             return false;
@@ -271,7 +291,11 @@ public class CliStudent {
             switch (omoomiOrEkhtesasi(courseId)){
                 case 0:{
                     if(student.vahedOmomi==0 && student.vahedTakhasosi==0){
-                        student.addingOmoomiCourse(omoomi[getOmoomiArrayIndex(courseId)]);
+                        if(checkOmoomiCapacity(omoomi[getOmoomiArrayIndex(courseId)])){
+                            student.addingOmoomiCourse(omoomi[getOmoomiArrayIndex(courseId)]);
+                        }else {
+                            registeringCourse();
+                        }
                     }else if(checkOmooomi(omoomi[getOmoomiArrayIndex(courseId)])){
                         student.addingOmoomiCourse(omoomi[getOmoomiArrayIndex(courseId)]);
                     }else {
@@ -280,7 +304,11 @@ public class CliStudent {
                     break;
                 } case 1:{
                     if(student.vahedOmomi==0 && student.vahedTakhasosi==0){
-                        student.addingEkhtesasiCourse(ekhtesasi[getEkhtesasiArrayIndex(courseId)]);
+                        if(checkEkhtesasiCapacity(ekhtesasi[getEkhtesasiArrayIndex(courseId)])){
+                            student.addingEkhtesasiCourse(ekhtesasi[getEkhtesasiArrayIndex(courseId)]);
+                        }else {
+                            registeringCourse();
+                        }
                     }else if(checkEkhtesasi(ekhtesasi[getEkhtesasiArrayIndex(courseId)])){
                         student.addingEkhtesasiCourse(ekhtesasi[getEkhtesasiArrayIndex(courseId)]);
                     }else {
