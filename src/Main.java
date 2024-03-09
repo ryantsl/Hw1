@@ -45,8 +45,8 @@ public class Main {
     }
 
     public static void run(){
-        Scanner scanner=new Scanner(System.in);
         boolean exit = true;
+        Scanner scanner=new Scanner(System.in);
         while (exit){
             System.out.println("baraye log in shodan gozine morede nazar ra type konid");
             System.out.println("1.vorod be onvane admin \n2.vorod be onvane daneshjoo\n3.khoroj az barname");
