@@ -297,7 +297,13 @@ public class CliStudent {
     }
 
     public void showMyCourses(){
-
+        System.out.println("tedad vahed takhasosi:"+student.vahedTakhasosi+"\ntedad vahed omoomi:"+student.vahedOmomi);
+        for (int i=0;i<student.tedadOmoomi;i++){
+            omoomi[getOmoomiArrayIndex(student.omoomiIds[i])].showCourses();
+        }
+        for (int i=0;i<student.tedadEkhtesasi;i++){
+            ekhtesasi[getEkhtesasiArrayIndex(student.ekhtesasiIds[i])].showCourses();
+        }
     }
     public void collegeSelector(){
         boolean exit=true;

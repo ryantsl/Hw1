@@ -68,7 +68,8 @@ public class Student {
             }
         }
         temp=false;
-        tedadOmoomi--;
+        this.tedadOmoomi--;
+        this.vahedOmomi-=omoomi.vahed;
         for (int i=0;i<omoomi.tedadeSabteNami;i++){
             if(temp){
                 omoomi.studentIds[i-1]=omoomi.studentIds[i];
@@ -79,6 +80,7 @@ public class Student {
             }
         }
         omoomi.tedadeSabteNami--;
+        System.out.println("dars ba movafaqiat hazf shod");
     }
 
     public void deleteigEkhtesasiCourse(Ekhtesasi ekhtesasi,int classId2){
@@ -93,7 +95,8 @@ public class Student {
             }
         }
         temp=false;
-        tedadEkhtesasi--;
+        this.tedadEkhtesasi--;
+        this.vahedTakhasosi-=ekhtesasi.vahed;
         for (int i=0;i<ekhtesasi.tedadeSabteNami;i++){
             if(temp){
                 ekhtesasi.studentIds[i-1]=ekhtesasi.studentIds[i];
@@ -104,6 +107,7 @@ public class Student {
             }
         }
         ekhtesasi.tedadeSabteNami--;
+        System.out.println("dars ba movafaqiat hazf shod");
     }
     public static boolean idCheckerIsNew(int inputId){
         if(Student.number_of_students==0){

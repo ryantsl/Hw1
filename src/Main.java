@@ -28,16 +28,27 @@ public class Main {
     public static void initClasses(){
         omoomi[Omoomi.omooomiCounter]=new Omoomi(1,2,30,0,"madar","ali moosavi",14030324,10,12,1,10.5,12);
         omoomi[Omoomi.omooomiCounter]=new Omoomi(2,2,30,1,"AP","majid hosseini",14030324,10.5,12.5,2,9,10.5);
-        omoomi[Omoomi.omooomiCounter]=new Omoomi(3,2,30,0,"static","navid saatdat",14030325,10,12,1,11.5,13);
+        omoomi[Omoomi.omooomiCounter]=new Omoomi(3,2,30,2,"static","navid saatdat",14030325,10,12,1,11.5,13);
         omoomi[Omoomi.omooomiCounter]=new Omoomi(4,2,30,3,"riazi","reza akbari",14030326,10,12,2,10.5,12);
         ekhtesasi[Ekhtesasi.ekhtesasiCounter]=new Ekhtesasi(5,3,30,0,"mokhaberat","reza akbari",14030326,10,12,2,4,7.5,9);
+        ekhtesasi[Ekhtesasi.ekhtesasiCounter]=new Ekhtesasi(6,3,30,0,"madar manteghi","reza akbari",14030326,10.5,12.5,2,4,8.5,10);
+        ekhtesasi[Ekhtesasi.ekhtesasiCounter]=new Ekhtesasi(7,3,30,0,"mabani bargh","reza akbari",14030327,10,12,0,2,7.5,9);
+        ekhtesasi[Ekhtesasi.ekhtesasiCounter]=new Ekhtesasi(8,3,30,1,"hoshe masnooi","reza akbari",14030328,10,12,2,4,13.5,15);
+        ekhtesasi[Ekhtesasi.ekhtesasiCounter]=new Ekhtesasi(9,3,30,1,"system amel","reza akbari",14030326,13,15,1,3,7.5,9);
+        ekhtesasi[Ekhtesasi.ekhtesasiCounter]=new Ekhtesasi(10,3,30,1,"BP","reza akbari",14030322,10,12,1,3,15,16.5);
+        ekhtesasi[Ekhtesasi.ekhtesasiCounter]=new Ekhtesasi(11,3,30,2,"dynamic","reza akbari",14030327,10,12,3,5,7.5,9);
+        ekhtesasi[Ekhtesasi.ekhtesasiCounter]=new Ekhtesasi(12,3,30,2,"vibration","reza akbari",14030326,10,12,0,4,10.5,12);
+        ekhtesasi[Ekhtesasi.ekhtesasiCounter]=new Ekhtesasi(13,3,30,2,"control","reza akbari",14030328,10,12,2,4,7.5,9);
+        ekhtesasi[Ekhtesasi.ekhtesasiCounter]=new Ekhtesasi(14,3,30,3,"PDE","reza akbari",14030326,10,12,0,2,13.5,15);
+        ekhtesasi[Ekhtesasi.ekhtesasiCounter]=new Ekhtesasi(15,3,30,3,"ehtemal","reza akbari",14030326,10,12,2,4,7.5,9);
+        ekhtesasi[Ekhtesasi.ekhtesasiCounter]=new Ekhtesasi(16,3,30,3,"amar","reza akbari",14030324,13,15,1,3,15,16.3);
     }
 
     public static void run(){
         Scanner scanner=new Scanner(System.in);
         boolean exit = true;
         while (exit){
-            System.out.println("baraye log in shodan gozine morede nazar ra type konif");
+            System.out.println("baraye log in shodan gozine morede nazar ra type konid");
             System.out.println("1.vorod be onvane admin \n2.vorod be onvane daneshjoo\n3.khoroj az barname");
             int a = scanner.nextInt();
             exit=switcher(a);

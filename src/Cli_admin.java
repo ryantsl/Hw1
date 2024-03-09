@@ -19,7 +19,7 @@ public class Cli_admin {
     public void menu(){
         boolean exit=true;
         while (exit){
-            System.out.println("Admin menu\n0.back\n1.moshahede doros\n2.ezafe kardane zarfiat\n3.ezafe kardane daneshjoo be dars\n4.hazf kardane daneshjoo az darsi\n5.tarif dars jadid\n 6.hazf dars");
+            System.out.println("Admin menu\n0.back\n1.moshahede doros\n2.ezafe kardane zarfiat\n3.ezafe kardane daneshjoo be dars\n4.hazf kardane daneshjoo az darsi\n5.tarif dars jadid\n6.hazf dars\n7.moshahede list daneshjooyane dars");
             Scanner scanner=new Scanner(System.in);
             int command=scanner.nextInt();
             switch (command){
@@ -42,8 +42,44 @@ public class Cli_admin {
                 } case 6:{
                     hazfDars();
                     break;
+                } case 7:{
+                    listOfStudent();
+                    break;
                 } default:{
                     System.out.println("dastoore tarif nashode,lotfan dobare vared konid");
+                }
+            }
+        }
+    }
+    public void listOfOmoomi(int classId){
+        System.out.println("zarfiat:"+omoomi[getOmoomiArrayIndex(classId)].tedadeSabteNami+"/"+omoomi[getOmoomiArrayIndex(classId)].capacity);
+        for (int i=0;i<omoomi[getOmoomiArrayIndex(classId)].tedadeSabteNami;i++){
+            System.out.println(i+1+":"+student[Student.getArrayIndex(omoomi[getOmoomiArrayIndex(classId)].studentIds[i])].name+"  shomare daneshjoo:"+student[Student.getArrayIndex(omoomi[getOmoomiArrayIndex(classId)].studentIds[i])].id+"\n");
+        }
+    }
+
+    public void listOfEkhtesasi(int classId){
+        System.out.println("zarfiat:"+ekhtesasi[getEkhtesasiArrayIndex(classId)].tedadeSabteNami+"/"+ekhtesasi[getEkhtesasiArrayIndex(classId)].capacity);
+        for (int i=0;i<ekhtesasi[getEkhtesasiArrayIndex(classId)].tedadeSabteNami;i++){
+            System.out.println(i+1+":"+student[Student.getArrayIndex(ekhtesasi[getEkhtesasiArrayIndex(classId)].studentIds[i])].name+"  shomare daneshjoo:"+student[Student.getArrayIndex(ekhtesasi[getEkhtesasiArrayIndex(classId)].studentIds[i])].id+"\n");
+        }
+    }
+    public void listOfStudent(){
+        System.out.println("code darse morede nazar ra vared konid va baraye bargasht be menu ghabl -1 ra vared konid");
+        Scanner scanner=new Scanner(System.in);
+        int classId= scanner.nextInt();
+        if(classId!=-1){
+            switch (omoomiOrEkhtesasi(classId)){
+                case 0:{
+                    listOfOmoomi(classId);
+                    break;
+                } case 1:{
+                    listOfEkhtesasi(classId);
+                    break;
+                } case 2:{
+                    System.out.println("darsi ba code morede nazar vojod nadare,lotfan dobare vared konid");
+                    listOfStudent();
+                    break;
                 }
             }
         }
